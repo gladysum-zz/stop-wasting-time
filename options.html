@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Test Extension Options</title>
+  <style>
+    body: { padding: 10px;}
+  </style>
+</head>
+
+<body>
+  Start time:
+  <select id="start-time">
+   <option value="0" selected>12AM</option>
+   <option value="1">1AM</option>
+  </select>
+
+  End time:
+  <select id="end-time">
+   <option value="22" selected>10PM</option>
+   <option value="23">11PM</option>
+  </select>
+
+  <br>
+
+  Start day:
+  <select id="start-day">
+   <option value="0" selected>Sunday</option>
+   <option value="1">Monday</option>
+  </select>
+
+  End day:
+  <select id="end-day">
+   <option value="5" selected>Friday</option>
+   <option value="6">Saturday</option>
+  </select>
+
+  <br>
+
+  Websites:<br>
+    <input type="text" name="firstname" id="websites"><br>
+
+  <div id="status"></div>
+  <button id="save">Save</button>
+
+  <script src="options.js"></script>
+</body>
+</html>
