@@ -1,6 +1,6 @@
 {
     "name": "Stop Wasting Time",
-    "version": "0.0.9",
+    "version": "1",
     "manifest_version": 2,
     "description": "Blocks access to user-specified websites during user-specified times",
     "icons": {
@@ -27,7 +27,7 @@
         "webRequestBlocking",
         "storage"
     ],
-    
+
     "web_accessible_resources": [
         "index.html"
     ]

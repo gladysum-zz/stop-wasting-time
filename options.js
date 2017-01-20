@@ -13,25 +13,25 @@ function save_options() {
     endDay: endDay,
     websites: websites
   }, function() {
-    
+
     // Display a message saying options were saved, then reload the extension.
     var status = document.getElementById('status');
-    status.textContent = "Options saved.";
+    status.textContent = websites;
     setTimeout(function() {
       status.textContent = '';
       chrome.runtime.reload();
-    }, 2000);
-    
+    }, 20000);
+
   });
 }
 
 // Populate the options form with data stored in chrome.storage.
 function retrieve_options() {
   chrome.storage.sync.get({
-    startTime: '1',
-    endTime: '23',
-    startDay: '1',
-    endDay: '6',
+    startTime: '',
+    endTime: '',
+    startDay: '',
+    endDay: '',
     websites: ''
   }, function(items) {
     document.getElementById('start-time').value = items.startTime;
