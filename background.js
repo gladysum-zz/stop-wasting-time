@@ -1,6 +1,6 @@
 'use strict';
 
-//Retrieve user preferences.
+//Retrieve user preferences, then execute a callback function that redirects to the "Stop wasting time page" if user navigates to a specified website during specified time.
 var startTime, endTime, startDay, endDay, websites;
 chrome.storage.sync.get({
   startTime: '',
@@ -15,26 +15,44 @@ chrome.storage.sync.get({
   endDay = items.endDay;
   websites = items.websites;
   var urlsArray = websites.split(",").map(function(url){return "*://*." + url.trim() + "/*"});
-  console.log(urlsArray);
   chrome.webRequest.onBeforeRequest.addListener(
-      function () {
-          var currentTime = new Date();
-          var hour = currentTime.getHours();
-          var day = currentTime.getDay();
-          // Add logic. If startTime > endTime, if startDay > endDay, undefined, etc.
-          if (hour >= startTime && hour <= endTime && day >= startDay  && day <= endDay) {
-              return {redirectUrl: chrome.extension.getURL('index.html')};
-          }
-      },
+    function () {
+      var currentTime = new Date();
+      var hour = currentTime.getHours();
+      var day = currentTime.getDay();
 
-      {
-          urls: urlsArray,
+      if (startTime < endTime && startDay < endDay){
+        if (hour >= startTime && hour < endTime && day >= startDay  && day <= endDay) {
+          return {redirectUrl: chrome.extension.getURL('index.html')};
+        }
+      }
 
+      if (startTime > endTime && startDay < endDay){
+        if (hour >= startTime || hour < endTime && day >= startDay  && day <= endDay) {
+          return {redirectUrl: chrome.extension.getURL('index.html')};
+        }
+      }
 
-          types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
-      },
+      if (startTime < endTime && startDay > endDay){
+        if (hour >= startTime && hour < endTime && day >= startDay || day <= endDay) {
+          return {redirectUrl: chrome.extension.getURL('index.html')};
+        }
+      }
 
-      ["blocking"]
+      if (startTime > endTime && startDay > endDay){
+        if (hour >= startTime || hour < endTime && day >= startDay || day <= endDay) {
+          return {redirectUrl: chrome.extension.getURL('index.html')};
+        }
+      }
+      console.log(startTime > endTime && startDay > endDay)
+    },
+
+    {
+      urls: urlsArray,
+      types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
+    },
+
+    ["blocking"]
   );
 
 });

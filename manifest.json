@@ -1,6 +1,6 @@
 {
     "name": "Stop Wasting Time",
-    "version": "1",
+    "version": "1.0.0",
     "manifest_version": 2,
     "description": "Blocks access to user-specified websites during user-specified times",
     "icons": {
@@ -10,7 +10,7 @@
     "options_ui": {
         "page": "options.html",
         "chrome_style": true,
-        "open_in_tab": false
+        "open_in_tab": true
     },
 
     "background": {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <title>My Test Extension Options</title>
   <style>
     body: { padding: 10px;}
@@ -8,39 +9,109 @@
 </head>
 
 <body>
+
+  <div class="container-fluid" padding="25%">
+    <div class="row">
+
+      <div class="col">
+        Start day:
+      </div>
+
+      <div class="col">
+        <select id="start-day">
+         <option value="0">Sunday</option>
+         <option value="1" selected>Monday</option>
+         <option value="2">Tuesday</option>
+         <option value="3">Wednesday</option>
+         <option value="4">Thursday</option>
+         <option value="5">Friday</option>
+         <option value="6">Saturday</option>
+        </select>
+      </div>
+
+      <div class="col">
+        End day:
+      </div>
+
+      <div class="col">
+        <select id="end-day">
+          <option value="0">Sunday</option>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thursday</option>
+          <option value="5" selected>Friday</option>
+          <option value="6">Saturday</option>
+        </select>
+      </div>
+
+
+
+
+  <br>
+
   Start time:
   <select id="start-time">
-   <option value="0" selected>12AM</option>
+   <option value="0">12AM</option>
    <option value="1">1AM</option>
+   <option value="2">2AM</option>
+   <option value="3">3AM</option>
+   <option value="4">4AM</option>
+   <option value="5">5AM</option>
+   <option value="6">6AM</option>
+   <option value="7">7AM</option>
+   <option value="8">8AM</option>
+   <option value="9" selected>9AM</option>
+   <option value="10">10AM</option>
+   <option value="11">11AM</option>
+   <option value="12">12PM</option>
+   <option value="13">1PM</option>
+   <option value="14">2PM</option>
+   <option value="15">3PM</option>
+   <option value="16">4PM</option>
+   <option value="17">5PM</option>
+   <option value="18">6PM</option>
+   <option value="19">7PM</option>
+   <option value="20">8PM</option>
+   <option value="21">9PM</option>
+   <option value="22">10PM</option>
+   <option value="23">11PM</option>
   </select>
 
   End time:
   <select id="end-time">
-   <option value="22" selected>10PM</option>
+   <option value="0">12AM</option>
+   <option value="1">1AM</option>
+   <option value="2">2AM</option>
+   <option value="3">3AM</option>
+   <option value="4">4AM</option>
+   <option value="5">5AM</option>
+   <option value="6">6AM</option>
+   <option value="7">7AM</option>
+   <option value="8">8AM</option>
+   <option value="9">9AM</option>
+   <option value="10">10AM</option>
+   <option value="11">11AM</option>
+   <option value="12">12PM</option>
+   <option value="13">1PM</option>
+   <option value="14">2PM</option>
+   <option value="15">3PM</option>
+   <option value="16">4PM</option>
+   <option value="17">5PM</option>
+   <option value="18" selected>6PM</option>
+   <option value="19">7PM</option>
+   <option value="20">8PM</option>
+   <option value="21">9PM</option>
+   <option value="22">10PM</option>
    <option value="23">11PM</option>
   </select>
 
   <br>
 
-  Start day:
-  <select id="start-day">
-   <option value="0" selected>Sunday</option>
-   <option value="1">Monday</option>
-  </select>
-
-  End day:
-  <select id="end-day">
-   <option value="5" selected>Friday</option>
-   <option value="6">Saturday</option>
-  </select>
-
-  <br>
-
-  Websites:<br>
-    <input type="text" name="firstname" id="websites"><br>
-
+  <h4>Websites I want to block:</h4><br>
+    <textarea id="websites" class="form-control" rows="5"></textarea>
   <div id="status"></div>
-  <button id="save">Save</button>
+  <button id="save" type="submit" class="btn btn-default">Save</button>
 
   <script src="options.js"></script>
 </body>
