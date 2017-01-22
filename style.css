@@ -1,0 +1,27 @@
+body {
+  margin: 0% 25% 0% 25%;
+}
+
+img {
+    width: 85%;
+    margin-top: 5%;
+}
+
+h3 {
+  color: silver;
+}
+
+.center{
+  text-align: center;
+}
+.time-selector {
+  margin-top: 3%;
+}
+
+.button-div {
+  margin-top: 5%;
+}
+
+.help-text {
+  color: gray;
+}

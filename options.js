@@ -15,13 +15,13 @@ function save_options() {
   }, function() {
 
     // Display a message saying options were saved, then reload the extension.
-    chrome.runtime.reload();
+
     var status = document.getElementById('status');
     status.textContent = "Settings were saved.";
     setTimeout(function() {
       status.textContent = '';
     }, 20000);
-
+    chrome.runtime.reload();
 
   });
 }

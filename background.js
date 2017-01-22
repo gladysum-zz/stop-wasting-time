@@ -44,7 +44,7 @@ chrome.storage.sync.get({
           return {redirectUrl: chrome.extension.getURL('index.html')};
         }
       }
-      console.log(startTime > endTime && startDay > endDay)
+
     },
 
     {

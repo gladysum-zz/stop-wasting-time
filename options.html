@@ -1,118 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <title>My Test Extension Options</title>
-  <style>
-    body: { padding: 10px;}
-  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+  <link href="/style.css" rel="stylesheet"></link>
+  <title>Options</title>
 </head>
 
 <body>
+  <div class="center"><h3>STOP WASTING TIME</h3></div>
+  <div><h4>Websites I want to block:</h4></div>
+  <div><textarea id="websites" class="form-control" rows="5"></textarea></div>
+  <div class="help-text">
+    <p>Enter the websites you want to block separated by a comma. Enter <b>only</b> the domain name and extension. For example: facebook.com, snapchat.com, instagram.com NOT https://www.facebook.com/, https://www.snapchat.com/, https://www.instagram.com/.
+    </p>
+  </div>
 
-  <div class="container-fluid" padding="25%">
-    <div class="row">
+  <div><h4>When I want to block them:</h4></div>
+  <div class="time-selector">
+    Start day:
+    <select id="start-day">
+     <option value="0">Sunday</option>
+     <option value="1" selected>Monday</option>
+     <option value="2">Tuesday</option>
+     <option value="3">Wednesday</option>
+     <option value="4">Thursday</option>
+     <option value="5">Friday</option>
+     <option value="6">Saturday</option>
+    </select>
+    End day:
+    <select id="end-day">
+      <option value="0">Sunday</option>
+      <option value="1">Monday</option>
+      <option value="2">Tuesday</option>
+      <option value="3">Wednesday</option>
+      <option value="4">Thursday</option>
+      <option value="5" selected>Friday</option>
+      <option value="6">Saturday</option>
+    </select>
+  </div>
+  <div class="time-selector">
+    Start time:
+    <select id="start-time">
+     <option value="0">12:00 am</option>
+     <option value="1">1:00 am</option>
+     <option value="2">2:00 am</option>
+     <option value="3">3:00 am</option>
+     <option value="4">4:00 am</option>
+     <option value="5">5:00 am</option>
+     <option value="6">6:00 am</option>
+     <option value="7">7:00 am</option>
+     <option value="8">8:00 am</option>
+     <option value="9" selected>9:00 am</option>
+     <option value="10">10:00 am</option>
+     <option value="11">11:00 am</option>
+     <option value="12">12:00 pm</option>
+     <option value="13">1:00 pm</option>
+     <option value="14">2:00 pm</option>
+     <option value="15">3:00 pm</option>
+     <option value="16">4:00 pm</option>
+     <option value="17">5:00 pm</option>
+     <option value="18">6:00 pm</option>
+     <option value="19">7:00 pm</option>
+     <option value="20">8:00 pm</option>
+     <option value="21">9:00 pm</option>
+     <option value="22">10:00 pm</option>
+     <option value="23">11:00 pm</option>
+    </select>
+    End time:
+    <select id="end-time">
+     <option value="0">12:00 am</option>
+     <option value="1">1:00 am</option>
+     <option value="2">2:00 am</option>
+     <option value="3">3:00 am</option>
+     <option value="4">4:00 am</option>
+     <option value="5">5:00 am</option>
+     <option value="6">6:00 am</option>
+     <option value="7">7:00 am</option>
+     <option value="8">8:00 am</option>
+     <option value="9">9:00 am</option>
+     <option value="10">10:00 am</option>
+     <option value="11">11:00 am</option>
+     <option value="12">12:00 pm</option>
+     <option value="13">1:00 pm</option>
+     <option value="14">2:00 pm</option>
+     <option value="15">3:00 pm</option>
+     <option value="16">4:00 pm</option>
+     <option value="17">5:00 pm</option>
+     <option value="18" selected>6:00 pm</option>
+     <option value="19">7:00 pm</option>
+     <option value="20">8:00 pm</option>
+     <option value="21">9:00 pm</option>
+     <option value="22">10:00 pm</option>
+     <option value="23">11:00 pm</option>
+    </select>
+  </div>
 
-      <div class="col">
-        Start day:
-      </div>
-
-      <div class="col">
-        <select id="start-day">
-         <option value="0">Sunday</option>
-         <option value="1" selected>Monday</option>
-         <option value="2">Tuesday</option>
-         <option value="3">Wednesday</option>
-         <option value="4">Thursday</option>
-         <option value="5">Friday</option>
-         <option value="6">Saturday</option>
-        </select>
-      </div>
-
-      <div class="col">
-        End day:
-      </div>
-
-      <div class="col">
-        <select id="end-day">
-          <option value="0">Sunday</option>
-          <option value="1">Monday</option>
-          <option value="2">Tuesday</option>
-          <option value="3">Wednesday</option>
-          <option value="4">Thursday</option>
-          <option value="5" selected>Friday</option>
-          <option value="6">Saturday</option>
-        </select>
-      </div>
-
-
-
-
-  <br>
-
-  Start time:
-  <select id="start-time">
-   <option value="0">12AM</option>
-   <option value="1">1AM</option>
-   <option value="2">2AM</option>
-   <option value="3">3AM</option>
-   <option value="4">4AM</option>
-   <option value="5">5AM</option>
-   <option value="6">6AM</option>
-   <option value="7">7AM</option>
-   <option value="8">8AM</option>
-   <option value="9" selected>9AM</option>
-   <option value="10">10AM</option>
-   <option value="11">11AM</option>
-   <option value="12">12PM</option>
-   <option value="13">1PM</option>
-   <option value="14">2PM</option>
-   <option value="15">3PM</option>
-   <option value="16">4PM</option>
-   <option value="17">5PM</option>
-   <option value="18">6PM</option>
-   <option value="19">7PM</option>
-   <option value="20">8PM</option>
-   <option value="21">9PM</option>
-   <option value="22">10PM</option>
-   <option value="23">11PM</option>
-  </select>
-
-  End time:
-  <select id="end-time">
-   <option value="0">12AM</option>
-   <option value="1">1AM</option>
-   <option value="2">2AM</option>
-   <option value="3">3AM</option>
-   <option value="4">4AM</option>
-   <option value="5">5AM</option>
-   <option value="6">6AM</option>
-   <option value="7">7AM</option>
-   <option value="8">8AM</option>
-   <option value="9">9AM</option>
-   <option value="10">10AM</option>
-   <option value="11">11AM</option>
-   <option value="12">12PM</option>
-   <option value="13">1PM</option>
-   <option value="14">2PM</option>
-   <option value="15">3PM</option>
-   <option value="16">4PM</option>
-   <option value="17">5PM</option>
-   <option value="18" selected>6PM</option>
-   <option value="19">7PM</option>
-   <option value="20">8PM</option>
-   <option value="21">9PM</option>
-   <option value="22">10PM</option>
-   <option value="23">11PM</option>
-  </select>
-
-  <br>
-
-  <h4>Websites I want to block:</h4><br>
-    <textarea id="websites" class="form-control" rows="5"></textarea>
   <div id="status"></div>
-  <button id="save" type="submit" class="btn btn-default">Save</button>
-
+  <div class="button-div"><button id="save" type="submit">Save</button></div>
   <script src="options.js"></script>
 </body>
 </html>

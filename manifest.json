@@ -4,7 +4,7 @@
     "manifest_version": 2,
     "description": "Blocks access to user-specified websites during user-specified times",
     "icons": {
-        "16": "stop-sign-blank.png"
+        "16": "swt.png"
     },
 
     "options_ui": {
