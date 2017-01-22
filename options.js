@@ -5,13 +5,15 @@ function save_options() {
   var startDay = document.getElementById('start-day').value;
   var endDay = document.getElementById('end-day').value;
   var websites = document.getElementById('websites').value;
+  var always = document.getElementById('check-box').checked;
 
   chrome.storage.sync.set({
     startTime: startTime,
     endTime: endTime,
     startDay: startDay,
     endDay: endDay,
-    websites: websites
+    websites: websites,
+    always: always
   }, function() {
 
     // Display a message saying options were saved, then reload the extension.
@@ -33,13 +35,15 @@ function retrieve_options() {
     endTime: '',
     startDay: '',
     endDay: '',
-    websites: ''
+    websites: '',
+    always: ''
   }, function(items) {
     document.getElementById('start-time').value = items.startTime;
     document.getElementById('end-time').value = items.endTime;
     document.getElementById('start-day').value = items.startDay;
     document.getElementById('end-day').value = items.endDay;
     document.getElementById('websites').value = items.websites;
+    document.getElementById('check-box').checked = items.always;
   });
 }
 
