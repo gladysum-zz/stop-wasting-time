@@ -9,10 +9,10 @@ chrome.storage.sync.get({
   endDay: '',
   websites: ''
 }, function(items) {
-  startTime = items.startTime;
-  endTime = items.endTime;
-  startDay = items.startDay;
-  endDay = items.endDay;
+  startTime = Number(items.startTime);
+  endTime = Number(items.endTime);
+  startDay = Number(items.startDay);
+  endDay = Number(items.endDay);
   websites = items.websites;
   var urlsArray = websites.split(",").map(function(url){return "*://*." + url.trim() + "/*"});
   chrome.webRequest.onBeforeRequest.addListener(
@@ -21,26 +21,26 @@ chrome.storage.sync.get({
       var hour = currentTime.getHours();
       var day = currentTime.getDay();
 
-      if (startTime < endTime && startDay < endDay){
-        if (hour >= startTime && hour < endTime && day >= startDay  && day <= endDay) {
+      if (startTime < endTime && startDay <= endDay){
+        if ((hour >= startTime && hour < endTime) && (day >= startDay  && day <= endDay)) {
           return {redirectUrl: chrome.extension.getURL('index.html')};
         }
       }
 
-      if (startTime > endTime && startDay < endDay){
-        if (hour >= startTime || hour < endTime && day >= startDay  && day <= endDay) {
+      if (startTime > endTime && startDay <= endDay){
+        if ((hour >= startTime || hour < endTime) && (day >= startDay  && day <= endDay)) {
           return {redirectUrl: chrome.extension.getURL('index.html')};
         }
       }
 
       if (startTime < endTime && startDay > endDay){
-        if (hour >= startTime && hour < endTime && day >= startDay || day <= endDay) {
+        if ((hour >= startTime && hour < endTime) && (day >= startDay || day <= endDay)) {
           return {redirectUrl: chrome.extension.getURL('index.html')};
         }
       }
 
       if (startTime > endTime && startDay > endDay){
-        if (hour >= startTime || hour < endTime && day >= startDay || day <= endDay) {
+        if ((hour >= startTime || hour < endTime) && (day >= startDay || day <= endDay)) {
           return {redirectUrl: chrome.extension.getURL('index.html')};
         }
       }
