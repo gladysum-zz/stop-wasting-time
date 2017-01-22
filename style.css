@@ -19,9 +19,24 @@ h3 {
 }
 
 .button-div {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .help-text {
   color: gray;
 }
+
+.check-box {
+  margin-top: 3%;
+  vertical-align: top;
+}
+
+.check-box span {
+  vertical-align: top;
+  margin-left: 1%;
+}
+
+.check-box input {
+  vertical-align: top;
+}
+

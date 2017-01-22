@@ -16,7 +16,7 @@ chrome.storage.sync.get({
   endDay = Number(items.endDay);
   websites = items.websites;
   always = items.always;
-console.log(always)
+
   var urlsArray = websites.split(",").map(function(url){return "*://*." + url.trim() + "/*"});
 
   chrome.webRequest.onBeforeRequest.addListener(
