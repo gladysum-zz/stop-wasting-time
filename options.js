@@ -22,7 +22,7 @@ function save_options() {
     status.textContent = "Settings were saved.";
     setTimeout(function() {
       status.textContent = '';
-    }, 20000);
+    }, 2000);
     chrome.runtime.reload();
 
   });
@@ -50,3 +50,7 @@ function retrieve_options() {
 document.addEventListener('DOMContentLoaded', retrieve_options);
 document.getElementById('save').addEventListener('click',
     save_options);
+
+
+
+
